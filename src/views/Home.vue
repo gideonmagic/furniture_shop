@@ -27,9 +27,17 @@
         <div class="english"><span>Product</span></div>
         <div class="product-nav">
           <div class="product-nav-single"><span>沙发</span></div>
-          <div class="product-nav-single">椅子</div>
-          <div class="product-nav-single">办公家具</div>
-          <div class="product-nav-single">灯具</div>
+          <div class="product-nav-single"><span>椅子</span></div>
+          <div class="product-nav-single"><span>办公家具</span></div>
+          <div class="product-nav-single"><span>灯具</span></div>
+        </div>
+        <div class="product-area">
+          <div class="product-single" v-for="(item, index) in 6" :key="index">
+            <img src="@/assets/img/product.jpg" alt="" />
+            <p class="title">椅子:摩其</p>
+            <p class="desc">骁龙845/双模5G</p>
+            <p class="price">300元<span>428元</span></p>
+          </div>
         </div>
       </div>
     </div>
@@ -102,7 +110,7 @@ export default {};
 .product {
   width: 100%;
   height: 500px;
-  background-color: rgb(245, 245, 245);
+  // background-color: rgb(245, 245, 245);
   .product-title-line {
     display: flex;
     flex-direction: column;
@@ -130,6 +138,54 @@ export default {};
         span {
           cursor: pointer;
         }
+      }
+    }
+    .product-area {
+      width: 100%;
+      height: 600px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      .product-single {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 44%;
+        width: 31%;
+        transition: box-shadow 0.5s;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+        img {
+          height: 70%;
+        }
+        .title {
+          font-size: 14px;
+          font-weight: 400;
+          color: #333;
+        }
+        .desc {
+          line-height: 20px;
+          font-size: 12px;
+          font-weight: 300;
+          color: #b0b0b0;
+        }
+        .price {
+          line-height: 35px;
+          font-size: 12px;
+          font-weight: 300;
+          color: #ff6700;
+          span {
+            color: #b0b0b0;
+            margin-left: 10px;
+            text-decoration: line-through;
+          }
+        }
+      }
+      .product-single:hover {
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.23);
+        top: -1px;
       }
     }
   }
