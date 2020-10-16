@@ -7,8 +7,9 @@
           <span @click="selectedNav = 0" :class="{'selected-span':selectedNav === 0}">网站首页</span>
           <span @click="selectedNav = 1" :class="{'selected-span':selectedNav === 1}">关于我们</span>
           <span @click="selectedNav = 2" :class="{'selected-span':selectedNav === 2}">产品中心</span>
-          <span @click="selectedNav = 3" :class="{'selected-span':selectedNav === 3}">公司服务</span>
-          <span @click="selectedNav = 4" :class="{'selected-span':selectedNav === 4}">联系我们</span>
+          <span @click="selectedNav = 3" :class="{'selected-span':selectedNav === 3}">产业新闻</span>
+          <span @click="selectedNav = 4" :class="{'selected-span':selectedNav === 4}">公司服务</span>
+          <span @click="selectedNav = 6" :class="{'selected-span':selectedNav === 5}">联系我们</span>
         </div>
       </div>
     </nav>

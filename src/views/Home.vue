@@ -7,6 +7,47 @@
         </el-carousel-item>
       </el-carousel>
     </div>
+
+    <div class="product">
+      <div class="text-area">
+        <h1>产品</h1>
+        <div class="english"><span>Product</span></div>
+        <div class="product-nav">
+          <div
+            class="product-nav-single"
+            :class="{ 'product-nav-single-active': productActive === 0 }"
+          >
+            <span @click="productActive = 0">沙发</span>
+          </div>
+          <div
+            class="product-nav-single"
+            :class="{ 'product-nav-single-active': productActive === 1 }"
+          >
+            <span @click="productActive = 1">椅子</span>
+          </div>
+          <div
+            class="product-nav-single"
+            :class="{ 'product-nav-single-active': productActive === 2 }"
+          >
+            <span @click="productActive = 2">办公家具</span>
+          </div>
+          <div
+            class="product-nav-single"
+            :class="{ 'product-nav-single-active': productActive === 3 }"
+          >
+            <span @click="productActive = 3">灯具</span>
+          </div>
+        </div>
+      </div>
+      <div class="product-area">
+        <div class="product-single" v-for="(item, index) in 6" :key="index">
+          <img src="@/assets/img/product.jpg" alt="" />
+          <p class="title">椅子:摩其</p>
+          <p class="desc">骁龙845/双模5G</p>
+          <p class="price">300元<span>428元</span></p>
+        </div>
+      </div>
+    </div>
     <div class="about">
       <div class="about-left">
         <h1>丹致</h1>
@@ -21,22 +62,23 @@
         <img src="@/assets/img/about.jpg" alt="" />
       </div>
     </div>
-    <div class="product">
-      <div class="product-title-line">
-        <h1>产品</h1>
-        <div class="english"><span>Product</span></div>
-        <div class="product-nav">
-          <div class="product-nav-single"><span>沙发</span></div>
-          <div class="product-nav-single"><span>椅子</span></div>
-          <div class="product-nav-single"><span>办公家具</span></div>
-          <div class="product-nav-single"><span>灯具</span></div>
-        </div>
-        <div class="product-area">
-          <div class="product-single" v-for="(item, index) in 6" :key="index">
-            <img src="@/assets/img/product.jpg" alt="" />
-            <p class="title">椅子:摩其</p>
-            <p class="desc">骁龙845/双模5G</p>
-            <p class="price">300元<span>428元</span></p>
+    <div class="news">
+      <div class="text-area">
+        <h1>新闻</h1>
+        <div class="english"><span>News</span></div>
+      </div>
+      <div class="new-area">
+        <div class="new-single" v-for="(info, index) of 4" :key="index">
+          <img :src="require('@/assets/img/news-1.jpg')" alt="" />
+          <div class="new-content">
+            <p class="time">2020-04-16</p>
+            <h1>智能坐便器能效水效标准延期实施</h1>
+            <div class="line">
+              <div class="line-black"></div>
+            </div>
+            <p class="text">
+              4月1日，国家标准化管理委员会发布通知称，因受新冠肺炎疫情影响，原定于...
+            </p>
           </div>
         </div>
       </div>
@@ -45,7 +87,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      productActive: 0,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -109,9 +157,9 @@ export default {};
 }
 .product {
   width: 100%;
-  height: 500px;
+  // height: 500px;
   // background-color: rgb(245, 245, 245);
-  .product-title-line {
+  .text-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -135,58 +183,67 @@ export default {};
         align-items: center;
         flex: 1;
         height: 100%;
+        transition: background-color 0.5s, color 0.5s;
         span {
           cursor: pointer;
         }
       }
+      .product-nav-single:hover {
+        background-color: rgb(189, 154, 123);
+        color: #fff;
+      }
+      .product-nav-single-active {
+        background-color: rgb(189, 154, 123);
+        color: #fff;
+      }
     }
-    .product-area {
-      width: 100%;
-      height: 600px;
+  }
+  .product-area {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    .product-single {
+      position: relative;
       display: flex;
-      justify-content: space-around;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      .product-single {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 44%;
-        width: 31%;
-        transition: box-shadow 0.5s;
-        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-        img {
-          height: 70%;
-        }
-        .title {
-          font-size: 14px;
-          font-weight: 400;
-          color: #333;
-        }
-        .desc {
-          line-height: 20px;
-          font-size: 12px;
-          font-weight: 300;
+      height: 44%;
+      width: 31%;
+      transition: box-shadow 0.5s;
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+      img {
+        height: 70%;
+      }
+      .title {
+        font-size: 14px;
+        font-weight: 400;
+        color: #333;
+      }
+      .desc {
+        line-height: 20px;
+        font-size: 12px;
+        font-weight: 300;
+        color: #b0b0b0;
+      }
+      .price {
+        line-height: 35px;
+        font-size: 12px;
+        font-weight: 300;
+        color: #ff6700;
+        span {
           color: #b0b0b0;
-        }
-        .price {
-          line-height: 35px;
-          font-size: 12px;
-          font-weight: 300;
-          color: #ff6700;
-          span {
-            color: #b0b0b0;
-            margin-left: 10px;
-            text-decoration: line-through;
-          }
+          margin-left: 10px;
+          text-decoration: line-through;
         }
       }
-      .product-single:hover {
-        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.23);
-        top: -1px;
-      }
+    }
+    .product-single:hover {
+      box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.23);
+      top: -1px;
     }
   }
 }
@@ -208,6 +265,87 @@ export default {};
     content: "";
     margin: 0 2px;
     margin-bottom: 2px;
+  }
+}
+.news {
+  width: 100%;
+  height: 500px;
+  // background-color: #000;
+  .text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      color: #000;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 50px;
+    }
+  }
+  .new-area {
+    width: 100%;
+    height: 300px;
+    // background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    .new-single {
+      position: relative;
+      user-select: none;
+      cursor: pointer;
+      width: 43%;
+      height: 45%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      img {
+        height: 70%;
+        width: 35%;
+        object-fit: cover;
+        margin-right: 15px;
+      }
+      .new-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // background-color: #000;
+        .time {
+          color: #a1a1a1;
+          line-height: 20px;
+        }
+        h1 {
+          color: #000;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 25px;
+        }
+        .line {
+          width: 100%;
+          height: 1px;
+          background-color: #efefef;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          .line-black {
+            width: 13px;
+            height: 1px;
+            background-color: #000;
+            transition: width 1s;
+          }
+        }
+        .text {
+          color: #a1a1a1;
+          line-height: 20px;
+        }
+      }
+    }
+    .new-single:hover > .new-content > .line > .line-black{
+        width: 100%;
+        height: 1px;
+        background-color: #000;
+    }
   }
 }
 </style>
