@@ -5,35 +5,13 @@
         <img src="@/assets/img/logo.png" alt="" />
         <div class="nav-area">
           <span
-            @click="selectedNav = 0"
-            :class="{ 'selected-span': selectedNav === 0 }"
-            >网站首页</span
+            v-for="(item, index) in navList"
+            :key="index"
+            :class="{ 'selected-span': selectedNav == index }"
+            @click="toPage(item)"
           >
-          <span
-            @click="selectedNav = 1"
-            :class="{ 'selected-span': selectedNav === 1 }"
-            >关于我们</span
-          >
-          <span
-            @click="selectedNav = 2"
-            :class="{ 'selected-span': selectedNav === 2 }"
-            >产品中心</span
-          >
-          <span
-            @click="selectedNav = 3"
-            :class="{ 'selected-span': selectedNav === 3 }"
-            >产业新闻</span
-          >
-          <span
-            @click="selectedNav = 4"
-            :class="{ 'selected-span': selectedNav === 4 }"
-            >公司服务</span
-          >
-          <span
-            @click="selectedNav = 5"
-            :class="{ 'selected-span': selectedNav === 5 }"
-            >联系我们</span
-          >
+            {{ item.navName }}
+          </span>
         </div>
       </div>
     </nav>
@@ -45,34 +23,35 @@
 <script>
 import Footer from "@/components/Footer.vue";
 export default {
-  watch: {
-    selectedNav(newV, oldV) {
-      let _this = this
-      console.log(newV);
-      switch (newV) {
-        case 0:
-          _this.$router.push({ name: 'Home' });
-          break;
-        case 1:
-          _this.$router.push({ name: 'About' });
-          break;
-        default:
-          break;
-      }
-    },
-  },
+  watch: {},
   data() {
     return {
       selectedNav: 0,
+      navList: [
+        { index: 0, navName: "网站首页", englishName: "Home" },
+        { index: 1, navName: "关于我们", englishName: "About" },
+        { index: 2, navName: "产品中心" },
+        { index: 3, navName: "产业新闻" },
+        { index: 4, navName: "公司服务" },
+        { index: 5, navName: "联系我们" },
+      ],
     };
   },
   components: {
     Footer,
   },
   methods: {
-    toHome() {
-      this.$router.push({ name: Home });
+    toPage(item) {
+      this.selectedNav = item.index;
+      this.sessionData("set", "selectedNav", item.index);
+      this.$router.push({ name: item.englishName });
     },
+  },
+  created() {
+    // 获取当前nav
+    if (this.sessionData("get", "selectedNav") != null) {
+      this.selectedNav = this.sessionData("get", "selectedNav");
+    }
   },
 };
 </script>

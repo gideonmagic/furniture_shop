@@ -1,13 +1,13 @@
 <template>
   <div class="foot">
-    <div class="a-link-line">
+    <!-- <div class="a-link-line">
       <span @click="selectedNav = 0">网站首页</span>
       <span @click="selectedNav = 1">关于我们</span>
       <span @click="selectedNav = 2">产品中心</span>
       <span @click="selectedNav = 3">产业新闻</span>
       <span @click="selectedNav = 4">公司服务</span>
       <span @click="selectedNav = 6">联系我们</span>
-    </div>
+    </div> -->
     <div class="company-info">
       <p>地址: 广西省钦州市钦南区沿水路30-11号</p>
       <p>电话: 183-7873-0110、151-0777-3002</p>
