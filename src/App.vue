@@ -7,15 +7,15 @@
           <span
             v-for="(item, index) in navList"
             :key="index"
-            :class="{ 'selected-span': selectedNav == index }"
-            @click="toPage(item)"
+            :class="{ 'selected-span': item.active == true }"
+            @click="toPage(index)"
           >
             {{ item.navName }}
           </span>
         </div>
       </div>
     </nav>
-    <div class="empty-box"></div>
+    <!-- <div class="empty-box"></div> -->
     <router-view />
     <Footer></Footer>
   </div>
@@ -26,14 +26,12 @@ export default {
   watch: {},
   data() {
     return {
-      selectedNav: 0,
       navList: [
-        { index: 0, navName: "网站首页", englishName: "Home" },
-        { index: 1, navName: "关于我们", englishName: "About" },
-        { index: 2, navName: "产品中心" },
-        { index: 3, navName: "产业新闻" },
-        { index: 4, navName: "公司服务" },
-        { index: 5, navName: "联系我们" },
+        { navName: "网站首页", englishName: "Home", active: true },
+        { navName: "关于我们", englishName: "About", active: false },
+        { navName: "产品中心", englishName: "Product", active: false },
+        { navName: "公司服务", englishName: "Service", active: false },
+        { navName: "联系我们", englishName: "Contact", active: false },
       ],
     };
   },
@@ -41,16 +39,21 @@ export default {
     Footer,
   },
   methods: {
-    toPage(item) {
-      this.selectedNav = item.index;
-      this.sessionData("set", "selectedNav", item.index);
-      this.$router.push({ name: item.englishName });
+    toPage(index) {
+      this.navList.forEach((item) => {
+        item.active = false;
+      });
+      console.log(index);
+      this.navList[index].active = true;
+      console.log(this.navList[index]);
+      this.$router.push({ name: this.navList[index].englishName });
+      this.sessionData("set", "navList", this.navList);
     },
   },
   created() {
     // 获取当前nav
-    if (this.sessionData("get", "selectedNav") != null) {
-      this.selectedNav = this.sessionData("get", "selectedNav");
+    if (this.sessionData("get", "navList") != null) {
+      this.navList = this.sessionData("get", "navList");
     }
   },
 };
@@ -65,20 +68,24 @@ export default {
 nav {
   display: flex;
   justify-content: center;
-  position: fixed;
+  // position: fixed;
+  position: relative;
   top: 0;
   left: 0;
+  right: 0;
   width: 100%;
+  min-width: 1200px;
   height: 70px;
   background-color: #333333;
   z-index: 50;
   .wrap {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 1200px;
     height: auto;
     img {
-      height: 100%;
+      height: 95%;
     }
     .nav-area {
       user-select: none;

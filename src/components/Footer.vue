@@ -30,7 +30,7 @@ export default {};
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 30px;
   padding-top: 10px;
   width: 100%;
   min-width: 1200px;
