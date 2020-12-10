@@ -8,18 +8,28 @@
           <div class="product-nav">
             <div
               class="product-nav-single"
-              v-for="(item, index) of productNav"
-              :class="{ 'product-nav-single-active': item.active === true }"
-
+              v-for="(item, index) of product"
+              :class="{
+                'product-nav-single-active': +index === +productActive,
+              }"
               :key="index"
-              @click="chooseProductNav(index)"
+              @click="productActive = index"
             >
-              <span @click="productActive = 0">{{ item.name }}</span>
+              <span>{{ item.chineseName }}</span>
             </div>
           </div>
         </div>
-        <div class="product-area">
-          <ProductSingle v-for="(item, index) in 16" :key="index" />
+        <div
+          class="product-area"
+          v-for="(productSingle, index) of product"
+          :key="index"
+          v-show="productActive === index"
+        >
+          <ProductSingle
+            v-for="(item, index) in productSingle.model"
+            :key="index"
+            :detail="item"
+          />
         </div>
       </div>
     </div>
@@ -27,40 +37,20 @@
 </template>
 
 <script>
+import product from "@/assets/json/product.json";
 import ProductSingle from "@/components/ProductSingle.vue";
 export default {
   components: { ProductSingle },
   data() {
     return {
-      productNav: [
-        {
-          name: "沙发",
-          active: true,
-        },
-        {
-          name: "椅子",
-          active: false,
-        },
-        {
-          name: "桌子",
-          active: false,
-        },
-        {
-          name: "柜子",
-          active: false,
-        },
-      ],
+      productActive: 0,
+      product: null,
     };
   },
-  methods: {
-    chooseProductNav(index) {
-      let _this = this
-      this.productNav.forEach(item=> {
-        item.active = false
-      })
-      this.productNav[index].active = true
-    }
-  }
+  methods: {},
+  created() {
+    this.product = product;
+  },
 };
 </script>
 

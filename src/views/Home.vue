@@ -2,8 +2,9 @@
   <div class="wrap">
     <div class="carousel-wrap">
       <el-carousel indicator-position="outside" height="550px">
-        <el-carousel-item v-for="item in 3" :key="item">
-          <img :src="require(`@/assets/img/home-top-${item}.jpg`)" alt="" />
+        <el-carousel-item v-for="(item, index) in json.carousel" :key="index">
+          <img :src="item" alt="" />
+          <!-- <img :src="require(`@/assets/img/home-top-${item}.jpg`)" alt="" /> -->
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -15,38 +16,28 @@
           <div class="product-nav">
             <div
               class="product-nav-single"
-              :class="{ 'product-nav-single-active': productActive === 0 }"
+              v-for="(item, index) in product"
+              :class="{
+                'product-nav-single-active': +index === +productActive,
+              }"
+              :key="index"
+              @click="changeProductActive(index)"
             >
-              <span @click="productActive = 0">沙发</span>
-            </div>
-            <div
-              class="product-nav-single"
-              :class="{ 'product-nav-single-active': productActive === 1 }"
-            >
-              <span @click="productActive = 1">椅子</span>
-            </div>
-            <div
-              class="product-nav-single"
-              :class="{ 'product-nav-single-active': productActive === 2 }"
-            >
-              <span @click="productActive = 2">办公家具</span>
-            </div>
-            <div
-              class="product-nav-single"
-              :class="{ 'product-nav-single-active': productActive === 3 }"
-            >
-              <span @click="productActive = 3">灯具</span>
+              <span> {{ item.chineseName }}</span>
             </div>
           </div>
         </div>
-        <div class="product-area">
-          <ProductSingle v-for="(item, index) in 6" :key="index" />
-          <!-- <div class="product-single" v-for="(item, index) in 6" :key="index">
-            <img src="@/assets/img/product.jpg" alt="" />
-            <p class="title">椅子:摩其</p>
-            <p class="desc">骁龙845/双模5G</p>
-            <p class="price">300元<span>428元</span></p>
-          </div> -->
+        <div
+          class="product-area"
+          v-for="(productSingle, index) of product"
+          :key="index"
+          v-show="productActive === index"
+        >
+          <ProductSingle
+            v-for="(item, index) in productSingle.model.slice(0, 6)"
+            :key="index"
+            :detail="item"
+          />
         </div>
       </div>
       <div class="about">
@@ -57,10 +48,10 @@
           <p>总部位于广东深圳。丹致家居集团秉承为全球智慧家居需求提供解决</p>
           <p>方案、改善人们的智慧家居生活品质的核心价值，致力于为全球家庭</p>
           <p>提供智慧家居产品与服务...</p>
-          <button class="brown-button">关于我们</button>
+          <button class="brown-button" @click="toAbout">关于我们</button>
         </div>
         <div class="about-right">
-          <img src="@/assets/img/about.jpg" alt="" />
+          <img :src="json.about" alt="" />
         </div>
       </div>
       <div class="news">
@@ -68,22 +59,27 @@
           <h1>新闻</h1>
           <div class="english"><span>News</span></div>
         </div>
-        <div class="new-area">
-          <div class="new-single" v-for="(info, index) of 4" :key="index">
-            <img :src="require('@/assets/img/news-1.jpg')" alt="" />
-            <div class="new-content">
-              <p class="time">2020-04-16</p>
-              <h1>智能坐便器能效水效标准延期实施</h1>
+        <div class="news-area">
+          <div
+            class="news-single"
+            v-for="(info, index) of news"
+            :key="index"
+            @click="toNewsDetail(index)"
+          >
+            <img :src="news[index].img[0]" alt="" />
+            <div class="news-content">
+              <p class="time">{{ info.time }}</p>
+              <h1>{{ info.title }}</h1>
               <div class="line">
                 <div class="line-black"></div>
               </div>
               <p class="text">
-                4月1日，国家标准化管理委员会发布通知称，因受新冠肺炎疫情影响，原定于...
+                {{ info.content[0] }}
               </p>
             </div>
           </div>
         </div>
-        <button class="brown-button">更多讯息</button>
+        <!-- <button class="brown-button">更多讯息</button> -->
       </div>
       <div class="partners">
         <div class="text-area">
@@ -95,7 +91,7 @@
         </div>
         <div class="logo-area">
           <div class="single" v-for="(item, index) of 8" :key="index">
-            <img :src="require('@/assets/img/home-partners-1.png')" alt="" />
+            <img :src="json.partner[index]" alt="" />
           </div>
         </div>
       </div>
@@ -104,14 +100,43 @@
 </template>
 
 <script>
+import json from "@/assets/json/home.json";
+import news from "@/assets/json/news.json";
+import product from "@/assets/json/product.json";
 import ProductSingle from "@/components/ProductSingle.vue";
 export default {
   data() {
     return {
       productActive: 0,
+      json: null,
+      news: null,
+      product: null,
     };
   },
+  methods: {
+    toNewsDetail(index) {
+      this.$router.push({
+        name: "NewsDetail",
+        query: {
+          id: index,
+        },
+      });
+    },
+    toAbout() {
+      this.$router.push({
+        name: "About",
+      });
+    },
+    changeProductActive(index) {
+      this.productActive = index;
+    },
+  },
   components: { ProductSingle },
+  created() {
+    this.json = json;
+    this.news = news.news;
+    this.product = product;
+  },
 };
 </script>
 
@@ -168,6 +193,7 @@ export default {
     .brown-button {
       width: 130px;
       height: 50px;
+      cursor: pointer;
       margin-top: 30px;
       border: none;
       background-color: rgb(189, 154, 123);
@@ -217,14 +243,12 @@ export default {
       height: 30px;
       .product-nav-single {
         display: flex;
+        cursor: pointer;
         justify-content: center;
         align-items: center;
         flex: 1;
         height: 100%;
         transition: background-color 0.5s, color 0.5s;
-        span {
-          cursor: pointer;
-        }
       }
       .product-nav-single:hover {
         background-color: rgb(189, 154, 123);
@@ -285,7 +309,7 @@ export default {
       line-height: 50px;
     }
   }
-  .new-area {
+  .news-area {
     width: 100%;
     height: 300px;
     // background-color: #000;
@@ -293,7 +317,7 @@ export default {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    .new-single {
+    .news-single {
       position: relative;
       user-select: none;
       cursor: pointer;
@@ -308,7 +332,7 @@ export default {
         object-fit: cover;
         margin-right: 15px;
       }
-      .new-content {
+      .news-content {
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -340,10 +364,14 @@ export default {
         .text {
           color: #a1a1a1;
           line-height: 20px;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          overflow: hidden;
         }
       }
     }
-    .new-single:hover > .new-content > .line > .line-black {
+    .news-single:hover > .news-content > .line > .line-black {
       width: 100%;
       height: 1px;
       background-color: #000;
@@ -390,7 +418,8 @@ export default {
       background-color: #f8f8f8;
       border: 1px solid #efefef;
       img {
-        width: 100%;
+        width: 70%;
+        object-fit: cover;
         filter: grayscale(100%);
       }
     }

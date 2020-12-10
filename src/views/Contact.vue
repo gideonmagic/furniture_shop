@@ -224,6 +224,7 @@ export default {
 .map {
   margin-top: 50px;
   width: 100%;
+  min-width: 1200px;
   height: 300px;
   // background-color: #000;
 }

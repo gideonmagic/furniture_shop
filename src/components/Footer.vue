@@ -15,7 +15,7 @@
     <div class="line"></div>
     <p class="copyright">
       Copyright © 2020 广西丹致家具制造有限公司 All Right Reserved.
-      桂ICP备10048445号
+      桂ICP备2020009614号-1
     </p>
   </div>
 </template>

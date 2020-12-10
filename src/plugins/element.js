@@ -6,7 +6,8 @@ import {
     Divider,
     Icon,
     Input,
-    Message
+    Message,
+    Loading
 } from 'element-ui'
 
 Vue.use(Button)
@@ -15,5 +16,6 @@ Vue.use(CarouselItem);
 Vue.use(Divider);
 Vue.use(Icon);
 Vue.use(Input);
+Vue.use(Loading);
 Vue.prototype.$message = Message
 

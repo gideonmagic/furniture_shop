@@ -1,13 +1,13 @@
 <template>
   <div class="service">
-    <img :src="require(`@/assets/img/service-1.jpg`)" style="min-width: 1200px;" alt="" />
+    <img src="https://s1.ax1x.com/2020/11/04/BgW26g.jpg" style="min-width: 1200px;" alt="" />
     <div class="content">
       <div class="brown-line"></div>
       <h1>全屋设计、省心省力</h1>
       <p>
         你可以自己完成所有事情，但是大可不必如此。我们提供一系列服务，让你的生活更加简便。无论你需要安装、组装帮助，还是要以可持续的方式回收旧家具，宜家的专业人员都可以帮你完成这些繁重的工作。
       </p>
-      <img :src="require(`@/assets/img/service-2.jpg`)" alt="" align="right" />
+      <img src="https://s1.ax1x.com/2020/11/04/BgWfmj.jpg" alt="" align="right" />
       <p>
         丹致全屋设计，设计理想的家。丹致提供专业设计与优质家居用品，由免费预约到设计咨询，方案呈现到送货安装，丹致一站式服务，让您贴心便捷。
       </p>
@@ -23,7 +23,7 @@
         专业的安装服务能节省您宝贵的时间，特别是一些棘手的安装上，如上下水的连接和台面的切割开孔。
       </p>
       <img
-        :src="require(`@/assets/img/service-3.jpg`)"
+        src="https://s1.ax1x.com/2020/11/04/BgWIkq.jpg"
         alt=""
         style="width: 100%; margin-top: 50px; margin-left: 0px"
       />
