@@ -110,7 +110,7 @@ export default {
           .select {
             display: flex;
             cursor: pointer;
-            width: 100px;
+            width: 110px;
             margin-top: 10px;
             margin-right: 10px;
             height: 30px;
@@ -118,11 +118,11 @@ export default {
             align-items: center;
             border: 1px solid #cccccc;
             color: #cccccc;
+            font-size: 12px;
           }
           .select:hover {
             display: flex;
             cursor: pointer;
-            width: 100px;
             margin-right: 10px;
             height: 30px;
             justify-content: center;
@@ -133,7 +133,6 @@ export default {
           .selected {
             display: flex;
             cursor: pointer;
-            width: 100px;
             margin-right: 10px;
             height: 30px;
             justify-content: center;

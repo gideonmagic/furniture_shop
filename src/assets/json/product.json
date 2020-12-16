@@ -429,7 +429,8 @@
                 "description": ["1、优质网布", "2、人体工学"],
                 "img": ["https://s3.ax1x.com/2020/11/18/DmEsI0.png",
                     "https://s3.ax1x.com/2020/11/18/DmEraq.png",
-                    "https://s3.ax1x.com/2020/11/18/DmEDZn.png"]
+                    "https://s3.ax1x.com/2020/11/18/DmEDZn.png"
+                ]
             }]
         }]
     },
@@ -560,12 +561,206 @@
             "mainImg": "https://s3.ax1x.com/2020/11/12/BxfZW9.jpg",
             "style": [{
                 "name": "214J-H12118",
-                "original": "7467",
-                "price": "7467",
+                "original": "1366",
+                "price": "1266",
                 "size": "2800W x 2800D x 1050H mm",
                 "description": ["1、不含∶健盘架、主机架", "2、含∶附柜", "3、屏风走线在踏脚板"],
                 "img": ["https://s3.ax1x.com/2020/11/12/BxfnQ1.jpg", "https://s3.ax1x.com/2020/11/12/BxfZW9.jpg"]
             }]
         }]
+    },
+    {
+        "chineseName": "茶台",
+        "model": [{
+                "name": "GXJ-682",
+                "original": "1960",
+                "price": "1960",
+                "description": "140 X 80 X 55 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/15/ruqsfK.jpg",
+                "style": [{
+                        "name": "配普通火烧石",
+                        "original": "1960",
+                        "price": "1960",
+                        "size": "140 X 80 X 55 cm",
+                        "description": ["配普通火烧石"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruqsfK.jpg","https://s3.ax1x.com/2020/12/15/ruq6SO.jpg"]
+                    },
+                    {
+                        "name": "配乌金石",
+                        "original": "2320",
+                        "price": "2320",
+                        "size": "140 X 80 X 55 cm",
+                        "description": ["配乌金石"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruqsfK.jpg","https://s3.ax1x.com/2020/12/15/ruq6SO.jpg"]
+                    },
+                    {
+                        "name": "木面，鸡翅木茶盘",
+                        "original": "2200",
+                        "price": "2200",
+                        "size": "140 X 80 X 55 cm",
+                        "description": ["木面，鸡翅木茶盘"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruqclD.jpg"]
+                    }
+                ]
+            }, {
+                "name": "GXJ-683",
+                "original": "1960",
+                "price": "1960",
+                "description": "130 X 80 X 55 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/15/ruLMcD.jpg",
+                "style": [{
+                        "name": "配普通石",
+                        "original": "1960",
+                        "price": "1960",
+                        "size": "130 X 80 X 55 cm",
+                        "description": ["配普通石"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruLMcD.jpg","https://s3.ax1x.com/2020/12/15/ruLK1O.jpg"]
+                    },
+                    {
+                        "name": "配乌金石",
+                        "original": "2460",
+                        "price": "2460",
+                        "size": "150 X 90 X 55 cm",
+                        "description": ["150 X 90 X 55 cm"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruLMcD.jpg","https://s3.ax1x.com/2020/12/15/ruLK1O.jpg"]
+                    },
+                    {
+                        "name": "配普通火烧石",
+                        "original": "2100",
+                        "price": "2100",
+                        "size": "150 X 90 X 55 cm",
+                        "description": ["配普通火烧石"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruLMcD.jpg","https://s3.ax1x.com/2020/12/15/ruLK1O.jpg"]
+                    },
+                    {
+                        "name": "配乌金石",
+                        "original": "2320",
+                        "price": "2320",
+                        "size": "130 X 80 X 55 cm",
+                        "description": ["配乌金石"],
+                        "img": ["https://s3.ax1x.com/2020/12/15/ruLMcD.jpg","https://s3.ax1x.com/2020/12/15/ruLK1O.jpg"]
+                    }
+                ]
+            }, {
+                "name": "GXJ-684",
+                "original": "1960",
+                "price": "1960",
+                "description": "130 X 80 X 55 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/15/ruOfit.jpg",
+                "style": [{
+                    "name": "配普通火烧石",
+                    "original": "1960",
+                    "price": "1960",
+                    "size": "130 X 80 X 55 cm",
+                    "description": ["配普通火烧石"],
+                    "img": ["https://s3.ax1x.com/2020/12/15/ruOfit.jpg","https://s3.ax1x.com/2020/12/15/ruORII.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-685",
+                "original": "1960",
+                "price": "1960",
+                "description": "140 X 80 X 55 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlrFu8.jpg",
+                "style": [{
+                    "name": "配普通火烧石",
+                    "original": "1960",
+                    "price": "1960",
+                    "size": "140 X 80 X 55 cm",
+                    "description": ["配普通火烧石"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlrFu8.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-681",
+                "original": "2320",
+                "price": "2320",
+                "description": "140 X 80 X 55 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlsTOK.jpg",
+                "style": [{
+                    "name": "升降木面",
+                    "original": "2320",
+                    "price": "2320",
+                    "size": "140 X 80 X 55 cm",
+                    "description": ["升降木面"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlsTOK.jpg","https://s3.ax1x.com/2020/12/16/rlsbwD.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-687",
+                "original": "3600",
+                "price": "3600",
+                "description": "160 X 80 X 75 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlrPjf.jpg",
+                "style": [{
+                    "name": "配4凳，1主椅",
+                    "original": "3600",
+                    "price": "3600",
+                    "size": "160 X 80 X 75 cm",
+                    "description": ["升降木面"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlrPjf.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-688",
+                "original": "2700",
+                "price": "2700",
+                "description": "140 X 80 X 75 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlrCgP.jpg",
+                "style": [{
+                    "name": "配普通火烧石",
+                    "original": "2700",
+                    "price": "2700",
+                    "size": "140 X 80 X 75 cm",
+                    "description": ["配普通火烧石"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlrCgP.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-689",
+                "original": "2700",
+                "price": "2700",
+                "description": "140 X 80 X 75 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlgrh4.jpg",
+                "style": [{
+                    "name": "木面与火烧石同价",
+                    "original": "2700",
+                    "price": "2700",
+                    "size": "140 X 80 X 75 cm",
+                    "description": ["木面与火烧石同价"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlgDNF.jpg","https://s3.ax1x.com/2020/12/16/rlgrh4.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-686",
+                "original": "1760",
+                "price": "1760",
+                "description": "130 X 80 X 45 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlrkDS.jpg",
+                "style": [{
+                    "name": "配普通火烧石",
+                    "original": "1760",
+                    "price": "1760",
+                    "size": "130 X 80 X 45 cm",
+                    "description": ["配普通火烧石"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlrkDS.jpg"]
+                }]
+            },
+            {
+                "name": "GXJ-T12",
+                "original": "2400",
+                "price": "2400",
+                "description": "130 X 80 X 75 cm",
+                "mainImg": "https://s3.ax1x.com/2020/12/16/rlr93t.jpg",
+                "style": [{
+                    "name": "配普通火烧石",
+                    "original": "2400",
+                    "price": "2400",
+                    "size": "130 X 80 X 75 cm",
+                    "description": ["配普通火烧石"],
+                    "img": ["https://s3.ax1x.com/2020/12/16/rlr93t.jpg"]
+                }]
+            }
+        ]
     }
 ]
