@@ -9,7 +9,7 @@
       </el-carousel>
     </div>
     <div class="home-area">
-      <div class="product">
+      <!-- <div class="product">
         <div class="text-area">
           <h1>产品</h1>
           <div class="english"><span>Product</span></div>
@@ -39,7 +39,7 @@
             :detail="item"
           />
         </div>
-      </div>
+      </div> -->
       <div class="about">
         <div class="about-left">
           <h1>丹致</h1>
@@ -66,7 +66,9 @@
             :key="index"
             @click="toNewsDetail(index)"
           >
-            <img :src="news[index].img[0]" alt="" />
+            <div class="img_area">
+              <img :src="news[index].img[0]" alt="" />
+            </div>
             <div class="news-content">
               <p class="time">{{ info.time }}</p>
               <h1>{{ info.title }}</h1>
@@ -100,9 +102,9 @@
 </template>
 
 <script>
-import json from "@/assets/json/home.json";
-import news from "@/assets/json/news.json";
-import product from "@/assets/json/product.json";
+import json from "public/json/home.json";
+import news from "public/json/news.json";
+import product from "public/json/product.json";
 import ProductSingle from "@/components/ProductSingle.vue";
 export default {
   data() {
@@ -319,21 +321,29 @@ export default {
     flex-wrap: wrap;
     .news-single {
       position: relative;
+      display: flex;
+      align-items: center;
       user-select: none;
       cursor: pointer;
       width: 43%;
       height: 45%;
       background-color: #fff;
-      display: flex;
-      align-items: center;
-      img {
-        height: 70%;
+
+      .img_area {
+        position: relative;
         width: 35%;
-        object-fit: cover;
+        height: 70%;
         margin-right: 15px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
       .news-content {
         height: 100%;
+        // width: 65%;
+        flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -347,6 +357,10 @@ export default {
           font-size: 14px;
           font-weight: 500;
           line-height: 25px;
+          width: 350px;
+          white-space: nowrap; /*强制在一行显示*/
+          text-overflow: ellipsis; /*设置超出内容显示...*/
+          overflow: hidden; /*一定不能少 超出的内容进行隐藏*/
         }
         .line {
           width: 100%;
@@ -368,6 +382,8 @@ export default {
           -webkit-box-orient: vertical;
           -webkit-line-clamp: 3;
           overflow: hidden;
+          text-overflow: ellipsis; /*设置超出内容显示...*/
+          overflow: hidden; /*一定不能少 超出的内容进行隐藏*/
         }
       }
     }

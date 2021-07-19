@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import product from "@/assets/json/product.json";
+import product from "public/json/product.json";
 export default {
   data() {
     return {

@@ -3,7 +3,7 @@
     <div class="mid">
       <div class="product">
         <div class="text-area">
-          <h1>产品中心</h1>
+          <h1 class="title-chinese">产品中心</h1>
           <div class="english"><span>Product</span></div>
           <div class="product-nav">
             <div
@@ -38,7 +38,7 @@
 
 <script>
 import product from "public/json/product.json";
-import ProductSingle from "@/components/ProductSingle.vue";
+import ProductSingle from "@/components/mProductSingle.vue";
 export default {
   components: { ProductSingle },
   data() {
@@ -60,10 +60,10 @@ export default {
   width: 100%;
   .mid {
     position: relative;
-    width: 1200px;
+    // width: 1200px;
     overflow: hidden;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 0.6rem;
   }
 }
 .text-area {
@@ -71,39 +71,13 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1 {
-    color: #000;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 50px;
-  }
-  .english {
-    text-align: center;
-    width: 300px;
-    height: 30px;
-    // background-color: #000;
-    span {
-      color: #999;
-    }
-    span::before,
-    span::after {
-      display: inline-block;
-      width: 30px;
-      height: 1px;
-      background: #999;
-      vertical-align: middle;
-      content: "";
-      margin: 0 2px;
-      margin-bottom: 2px;
-    }
-  }
   .product-nav {
     user-select: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
-    height: 30px;
+    width: 3.2rem;
+    height: 0.4rem;
     .product-nav-single {
       display: flex;
       justify-content: center;
@@ -112,6 +86,7 @@ export default {
       height: 100%;
       transition: background-color 0.5s, color 0.5s;
       span {
+        font-size: 0.19rem;
         cursor: pointer;
       }
     }

@@ -7,7 +7,8 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 Vue.use(VueRouter)
-const routes = [{
+const routesPC = [
+  {
     path: '/',
     name: 'Home',
     component: Home
@@ -43,7 +44,40 @@ const routes = [{
     component: () => import('../views/NewsDetail.vue')
   }
 ]
+const routesM = [
+  // 手机端
+  {
+    path: '/',
+    name: 'Home',
+    component: () => import("@/views/mobile/home"),
+    // component: Home
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import('../views/mobile/about.vue')
+  },
+  {
+    path: '/product',
+    name: 'Product',
+    component: () => import('../views/mobile/product.vue')
+  },
+  {
+    path: '/service',
+    name: 'Service',
+    component: () => import('../views/mobile/service.vue')
+  },
+]
+
+var routes = []
+if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+  routes = routesM
+} else {
+  routes = routesPC
+}
+
 const router = new VueRouter({
+  mode: "history",
   routes,
   // 路由跳转时滚轴位置
   scrollBehavior(to, from, savedPosition) {
@@ -53,4 +87,5 @@ const router = new VueRouter({
     }
   }
 })
+
 export default router

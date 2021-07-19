@@ -1,13 +1,13 @@
 <template>
   <div class="about">
-    <img
+    <!-- <img
       :src="json.img[0]"
-      style="min-width: 1200px"
       alt=""
-    />
-    <div class="content">
+      class="top_img"
+    /> -->
+    <div class="content content_p">
       <div class="brown-line"></div>
-      <h1>为你所需、力所能及</h1>
+      <h1 class="h1_type_2">为你所需、力所能及</h1>
       <p>我们的理想和商业理念</p>
       <p>
         广西丹致家具制造有限公司，全面负责橱柜、衣柜、书柜品牌的运营和推广及产品制造。丹致是国内专业的定制家具品牌之一,它聚集了行业内专业人才，设立A-MAX设计工作室。
@@ -21,7 +21,7 @@
         产品包括各大系列：班台系列、办公屏风系列、胶板家具系列、办公桌椅系列、办公沙发系列、会议桌椅系列、学校系列、酒店系列、房地产样品间等一系列配套，另外还经营民用家具系列，风格广泛：中式实木风格、板木风格、欧美风格、韩式风格、北欧风格等等。作为一站式家具供应商，我们不断地在向客户了解需求，解决实际问题。“为你所需、力所能及”是我们的服务理念，站在客户的立场做到力所能及。
       </p>
       <div class="brown-line"></div>
-      <h1>优雅、舒适、绿色</h1>
+      <h1 class="h1_type_2">优雅、舒适、绿色</h1>
       <p>
         丹致拥有大批专业技术人员。本着科技为本、质量先行、精益求精的企业精神，具有承接各种大型办公写字楼，星级套房以及教学大楼、学生公寓的家具配套能力，并以快捷的运送、专业的安装服务，为客户创造品格超卓、优雅、舒适的绿色环保办公空间。公司经营的所以产品均取得绿色环保资质认证。
       </p>
@@ -30,15 +30,11 @@
         ，是一棵努力向上、生生不息的大树、永远向着太阳！丹致的人就像这课大树一样，有着乐观自信，勇于创新的精神，不断学习，积极向上，周心周德，为发展丹致的事业而不断超越自我！
       </p>
       <div class="brown-line"></div>
-      <h1>体现客户价值，以原创为动力</h1>
+      <h1 class="h1_type_2">体现客户价值，以原创为动力</h1>
       <p>
         我们，为客户提供优质产品并及时满足客户需求这奠定了坚实的基础；我们，积极向上，以原创为动力，以质量为根本，以服务为优先，提供优质的产品与服务，受到了客户一致认可；我们，所做的一切都是源于您的肯定和支持；我们，现在，越来越多的企业选择了丹致，因为丹致能够提供更好的办公整体解决方案一体化。我们，一直在努力学习不断成长；请相信现在的丹致和明天的丹致都会是一个值得您信任的合作伙伴。
       </p>
-      <img
-        :src="json.img[2]"
-        alt=""
-        style="width: 100%"
-      />
+      <img :src="json.img[2]" alt="" style="width: 100%" />
       <p>
         丹致家具制造有限公司从渠道最前端供货，免去额外的渠道费用，大大降低采购成本。
         利用互联网传播快、覆盖广的特点，丹致家具制造有限公司通过在各大搜索引擎及各大经销商实体店相结合引导意向顾客进入丹致家具制造有限公司，在我们的网站上顾客可以选择更多更优质的家居产品。与此同时，丹致家具有限公司在远离市区的区域销商实体店经的形式建设线下售后服务。丹致家具有限公司的运营模式会提高传统卖场更高更好的营销效益。
@@ -72,7 +68,12 @@ export default {
 <style lang="scss" scoped>
 .about {
   margin: 0 auto;
+  // margin-top: 0.6rem;
   width: 100%;
+  .top_img {
+    // height: 1rem;
+    object-fit: contain;
+  }
   img {
     left: 0;
     top: 0;
@@ -81,36 +82,19 @@ export default {
   }
   .content {
     position: relative;
-    width: 1200px;
+    // width: 1200px;
     overflow: hidden;
     margin: 0 auto;
     // height: 900px;
     // background-color: #000;
-    .brown-line {
-      position: relative;
-      margin-top: 100px;
-      // margin-left: 100px;
-      width: 100px;
-      height: 5px;
-      background-color: rgb(189, 154, 123);
-    }
-    h1 {
-      font-weight: 500;
-      font-size: 20px;
-      margin-bottom: 50px;
-    }
+    
     img {
       width: 500px;
       margin-right: 50px;
-      margin-bottom: 50px;
+      // margin-bottom: 50px;
+      margin-bottom: 0.2rem;
     }
-    p {
-      margin-bottom: 50px;
-      font-weight: 200;
-      font-size: 14px;
-      line-height: 30px;
-      text-indent: 2em;
-    }
+    
   }
 }
 </style>

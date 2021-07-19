@@ -7,9 +7,30 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>logo.ico">
   <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
-  <title>丹致制造</title>
-  <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=e4932c9cc46d2219b44ad13965025285"></script> 
+  <title>广西丹致家具制造有限公司 - - Denzo官网</title>
+  <meta name="description"
+    content="产品包括各大系列：班台系列、办公屏风系列、胶板家具系列、办公桌椅系列、办公沙发系列、会议桌椅系列、学校系列、酒店系列、房地产样品间等一系列配套，另外还经营民用家具系列，风格广泛：中式实木风格、板木风格、欧美风格、韩式风格、北欧风格等等。">
+  <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=e4932c9cc46d2219b44ad13965025285">
+  </script>
+  <script src="./icon.js"></script>
 </head>
+<script>
+  (function () {
+    // 在标准 375px 适配下，100px = 1rem;
+    var baseFontSize = 100;
+    var baseWidth = 375;
+    var set = function () {
+      var clientWidth = document.documentElement.clientWidth || window.innerWidth;
+      var rem = 100;
+      if (clientWidth != baseWidth) {
+        rem = Math.floor(clientWidth / baseWidth * baseFontSize);
+      }
+      document.querySelector('html').style.fontSize = rem + 'px';
+    }
+    set();
+    window.addEventListener('resize', set);
+  }());
+</script>
 
 <body>
   <noscript>

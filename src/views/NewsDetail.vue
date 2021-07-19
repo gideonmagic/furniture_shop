@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import news from "@/assets/json/news.json";
+import news from "public/json/news.json";
 export default {
   data() {
     return {
