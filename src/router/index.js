@@ -67,6 +67,11 @@ const routesM = [
     name: 'Service',
     component: () => import('../views/mobile/service.vue')
   },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('../views/mobile/contact.vue')
+  },
 ]
 
 var routes = []

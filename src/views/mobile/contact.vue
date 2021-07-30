@@ -3,7 +3,7 @@
     <div class="mid">
       <div class="contact">
         <div class="text-area">
-          <h1>联系我们</h1>
+          <h1 class="title-chinese">联系我们</h1>
           <div class="english"><span>Contact</span></div>
         </div>
         <div class="ways">
@@ -33,7 +33,7 @@
       </div>
       <div class="message-board">
         <div class="text-area">
-          <h1>留言给我们</h1>
+          <h1 class="title-chinese">留言给我们</h1>
           <div class="english"><span>Message Board</span></div>
         </div>
         <div class="input-area">
@@ -81,7 +81,7 @@ export default {
       let _this = this;
       this.map = new AMap.Map("container", {
         resizeEnable: true, //是否监控地图容器尺寸变化
-        zoom: 20, //级别
+        zoom: 16, //级别
         center: [108.619132, 21.961243], //中心点坐标
       });
       var marker = new AMap.Marker({
@@ -118,10 +118,11 @@ export default {
   width: 100%;
   .mid {
     position: relative;
-    width: 1200px;
+    // width: 1200px;
+    width: 100%;
     overflow: hidden;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 0.6rem;
   }
 }
 .text-area {
@@ -129,60 +130,38 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1 {
-    color: #000;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 50px;
-  }
-  .english {
-    text-align: center;
-    width: 300px;
-    height: 30px;
-    // background-color: #000;
-    span {
-      color: #999;
-    }
-    span::before,
-    span::after {
-      display: inline-block;
-      width: 30px;
-      height: 1px;
-      background: #999;
-      vertical-align: middle;
-      content: "";
-      margin: 0 2px;
-      margin-bottom: 2px;
-    }
-  }
 }
 .ways {
   display: flex;
+  flex-direction: column;
+  padding-top: 0.2rem;
   width: 100%;
-  height: 200px;
-  //   background-color: #000;
+  height: auto;
   .way-single {
     flex: 1;
+    margin-bottom: 0.25rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     i {
-      font-size: 50px;
+      font-size: 0.35rem;
       color: #c72225;
     }
     .text {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 300px;
-      height: 100px;
+      // width: 3rem;
+      width: 100%;
+      // height: 100px;
       //   background-color: #000;
       h1 {
-        font-size: 20px;
-        line-height: 40px;
+        font-size: 0.25rem;
+        // line-height: 40px;
       }
       span {
+        font-size: 0.15rem;
         color: #999;
       }
     }
@@ -193,11 +172,13 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 0.4rem;
   .input-area {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
+    // width: 600px;
+    width: 90%;
     // height: 400px;
     // background-color: #000;
     .input-area-top-line {
@@ -224,8 +205,8 @@ export default {
 .map {
   margin-top: 50px;
   width: 100%;
-  min-width: 1200px;
-  height: 300px;
+  // min-width: 1200px;
+  height: 2rem;
   // background-color: #000;
 }
 </style>
