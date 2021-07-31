@@ -15,6 +15,7 @@ import {
 } from "@/assets/js/local"
 Vue.prototype.localData = localData;
 Vue.prototype.sessionData = sessionData;
+
 new Vue({
   router,
   render: h => h(App)

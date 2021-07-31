@@ -75,7 +75,28 @@ export default {
   },
   methods: {
     submit() {
-      this.$message.success("感谢您的留言！")
+      if (this.nameInput.length == 0) {
+        this.$message({
+          message: "请输入您的姓名～",
+          type: "error",
+        });
+      } else if (this.phoneInput.length == 0) {
+        this.$message({
+          message: "请输入联系方式～",
+          type: "error",
+        });
+      } else if (this.suggest.length == 0) {
+        this.$message({
+          message: "请输入您的建议～",
+          type: "error",
+        });
+      } else {
+        this.nameInput = "";
+        this.$message({
+          message: "感谢您的留言！",
+          type: "success",
+        });
+      }
     },
     initMap() {
       let _this = this;

@@ -71,6 +71,16 @@ export default {
       product: null,
     };
   },
+  methods: {
+    toNewsDetail(index) {
+      this.$router.push({
+        name: "NewsDetail",
+        query: {
+          id: index,
+        },
+      });
+    },
+  },
   created() {
     this.json = json;
     this.news = news.news;

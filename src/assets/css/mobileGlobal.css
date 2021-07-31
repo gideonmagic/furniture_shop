@@ -1,0 +1,52 @@
+.title-chinese {
+    font-size: 0.36rem;
+    color: #000;
+    font-weight: 500;
+}
+
+.english {
+    text-align: center;
+}
+
+.english span {
+    color: #999;
+}
+
+.english span::before,
+.english span::after {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: #999;
+    vertical-align: middle;
+    content: "";
+    margin: 0 2px;
+    margin-bottom: 2px;
+}
+
+p {
+    color: #999;
+    font-size: 0.17rem;
+    line-height: 0.3rem;
+}
+
+.brown-line {
+    position: relative;
+    margin-top: 0.6rem;
+    width: 100px;
+    height: 5px;
+    background-color: rgb(189, 154, 123);
+}
+
+.h1_type_2 {
+    color: #555;
+    font-size: 0.26rem;
+    margin-bottom: 0.2rem;
+}
+
+.content_p p {
+    padding: 0 0.25rem;
+    margin-bottom: 0.2rem;
+    text-indent: 2em;
+    color: #999;
+}

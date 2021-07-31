@@ -7,6 +7,7 @@
 <script>
 import PC from "@/PCApp.vue";
 import Mobile from "@/MobileApp.vue";
+
 export default {
   components: {
     PC,

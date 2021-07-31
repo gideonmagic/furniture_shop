@@ -74,16 +74,17 @@ export default {
   width: 100%;
   .mid {
     position: relative;
-    width: 1200px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.2rem;
     overflow: hidden;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 0.8rem;
     // background-color: #000;
     text-align: center;
     min-height: 520px;
-
     h1 {
-      font-size: 20px;
+      font-size: 0.25rem;
     }
     .count {
       margin-top: 20px;
@@ -95,7 +96,7 @@ export default {
       background-color: rgb(225, 225, 225);
     }
     .content {
-      margin-top: 20px;
+      margin-top: 0.2rem;
       width: 100%;
       text-align: left;
       // height: 100px;
@@ -110,6 +111,7 @@ export default {
       margin-top: 20px;
       span {
         line-height: 40px;
+        font-size: 0.16rem;
       }
     }
   }

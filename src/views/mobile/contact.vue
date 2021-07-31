@@ -75,7 +75,33 @@ export default {
   },
   methods: {
     submit() {
-      this.$message.success("感谢您的留言！")
+      // this.$message.success("感谢您的留言！")
+      if (this.nameInput.length == 0) {
+        this.$message({
+          message: "请输入您的姓名～",
+          type: "error",
+          offset: 110,
+        });
+      } else if (this.phoneInput.length == 0) {
+        this.$message({
+          message: "请输入联系方式～",
+          type: "error",
+          offset: 110,
+        });
+      } else if (this.suggest.length == 0) {
+        this.$message({
+          message: "请输入您的建议～",
+          type: "error",
+          offset: 110,
+        });
+      } else {
+        this.nameInput = "";
+        this.$message({
+          message: "感谢您的留言！",
+          type: "success",
+          offset: 110,
+        });
+      }
     },
     initMap() {
       let _this = this;
@@ -190,9 +216,10 @@ export default {
   }
 }
 .brown-button {
-  width: 130px;
-  height: 50px;
-  margin-top: 30px;
+  width: 1.3rem;
+  height: 0.5rem;
+  margin-top: 0.15rem;
+  font-size: 0.2rem;
   border: none;
   background-color: rgb(189, 154, 123);
   transition: background-color 0.36s;

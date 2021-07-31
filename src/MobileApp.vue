@@ -31,8 +31,7 @@
 
 <script>
 import Footer from "@/components/mFooter.vue";
-import '@/assets/css/mobileGlobal.scss'
-
+// import "assets/css/mobileGlobal.scss";
 
 export default {
   components: {
@@ -78,6 +77,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 nav {
   position: fixed;
@@ -167,4 +167,4 @@ nav {
   transform: translateX(10px);
   opacity: 0;
 }
-</style>>
+</style>

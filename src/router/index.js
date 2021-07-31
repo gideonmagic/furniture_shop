@@ -7,8 +7,7 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 Vue.use(VueRouter)
-const routesPC = [
-  {
+const routesPC = [{
     path: '/',
     name: 'Home',
     component: Home
@@ -72,6 +71,16 @@ const routesM = [
     name: 'Contact',
     component: () => import('../views/mobile/contact.vue')
   },
+  {
+    path: '/productDetail',
+    name: 'ProductDetail',
+    component: () => import('../views/mobile/productDetail.vue')
+  },
+  {
+    path: '/newsDetail',
+    name: 'NewsDetail',
+    component: () => import('../views/mobile/newsDetail.vue')
+  }
 ]
 
 var routes = []

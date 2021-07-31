@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>logo.ico">
+  <!-- <link href="../src/assets/css/mobileGlobal.scss" rel="stylesheet" href="style.scss"> -->
   <!-- <title><%= htmlWebpackPlugin.options.title %></title> -->
   <title>广西丹致家具制造有限公司 - - Denzo官网</title>
   <meta name="description"
@@ -15,6 +16,15 @@
   <script src="./icon.js"></script>
 </head>
 <script>
+  function loadCSS() {
+    if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|wOSBrowser|BrowserNG|WebOS)/i))) {
+      // import '../src/assets/css/mobileGlobal.scss'
+      document.write('<link href="./css/mobileGlobal.css" rel="stylesheet" href="style.css"/>');
+      // document.write('<link href="./../src/assets/css/mobileGlobal.css" rel="stylesheet" href="style.css"/>');
+
+    }
+  }
+  loadCSS();
   (function () {
     // 在标准 375px 适配下，100px = 1rem;
     var baseFontSize = 100;
