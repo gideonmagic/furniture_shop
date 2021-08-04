@@ -10,7 +10,10 @@ Vue.use(VueRouter)
 const routesPC = [{
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      keepAlive: true,
+    }
   },
   {
     path: '/about',
@@ -20,7 +23,10 @@ const routesPC = [{
   {
     path: '/product',
     name: 'Product',
-    component: () => import('../views/Product.vue')
+    component: () => import('../views/Product.vue'),
+    meta: {
+      keepAlive: true,
+    }
   },
   {
     path: '/service',
@@ -50,6 +56,9 @@ const routesM = [
     name: 'Home',
     component: () => import("@/views/mobile/home"),
     // component: Home
+    meta: {
+      keepAlive: true,
+    }
   },
   {
     path: '/about',
@@ -59,7 +68,10 @@ const routesM = [
   {
     path: '/product',
     name: 'Product',
-    component: () => import('../views/mobile/product.vue')
+    component: () => import('../views/mobile/product.vue'),
+    meta: {
+      keepAlive: true,
+    }
   },
   {
     path: '/service',
@@ -100,6 +112,18 @@ const router = new VueRouter({
       y: 0
     }
   }
+})
+
+// 路由拦截器
+router.beforeEach((to, from, next) => {
+  let toDepth = to.path.split('/').length
+  let fromDepth = from.path.split('/').length
+  if (toDepth < fromDepth) {
+    // console.log('后退。。。')
+    from.meta.keepAlive = false
+    to.meta.keepAlive = true
+  }
+  next()
 })
 
 export default router

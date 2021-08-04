@@ -1,7 +1,9 @@
 <template>
   <div>
-    <PC v-if="PC" />
-    <Mobile v-if="!PC" />
+    <keep-alive>
+      <PC v-if="PC" />
+      <Mobile v-if="!PC" />
+    </keep-alive>
   </div>
 </template>
 <script>

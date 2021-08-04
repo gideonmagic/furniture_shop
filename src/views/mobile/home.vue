@@ -69,6 +69,7 @@ export default {
       json: null,
       news: null,
       product: null,
+      cacheData: null
     };
   },
   methods: {

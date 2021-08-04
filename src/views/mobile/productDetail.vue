@@ -105,9 +105,7 @@ export default {
         justify-content: center;
         padding: 0.3rem;
         //   background-color: rgb(235, 195, 195);
-
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
         height: 100%;
         .select-area {
           user-select: none;
@@ -115,8 +113,11 @@ export default {
           flex-wrap: wrap;
           .select {
             display: flex;
+            box-sizing: border-box;
             cursor: pointer;
-            width: 46%;
+            // width: 1.2rem;
+            width: auto;
+            padding: 0.2rem;
             margin-top: 10px;
             margin-right: 10px;
             height: 0.45rem;
