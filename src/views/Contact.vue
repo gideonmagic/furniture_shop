@@ -12,7 +12,7 @@
             <div class="text">
               <h1>电话</h1>
               <span>183-7873-0110</span>
-              <span>191-0203-2297</span>
+              <span>151-0777-3002</span>
             </div>
           </div>
           <div class="way-single">

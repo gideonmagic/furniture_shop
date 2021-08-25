@@ -103,7 +103,7 @@ if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobi
 }
 
 const router = new VueRouter({
-  mode: "history",
+  mode: "hash",
   routes,
   // 路由跳转时滚轴位置
   scrollBehavior(to, from, savedPosition) {
